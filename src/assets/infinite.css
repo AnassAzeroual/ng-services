@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* Make the element pulse (grow large and small slowly) */
 /* Usage
     .myElement {
@@ -8,11 +15,26 @@
 */
 
 .pulsate {
+  -webkit-animation: pulsate 1s ease-out;
   animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   opacity: 1;
 }
 @-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
+@keyframes pulsate {
   0% {
     -webkit-transform: scale(0.1, 0.1);
     opacity: 0;
@@ -35,11 +57,24 @@
     }
 */
 .opacityPulse {
+  -webkit-animation: opacityPulse 1s ease-out;
   animation: opacityPulse 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   opacity: 0;
 }
 @-webkit-keyframes opacityPulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacityPulse {
   0% {
     opacity: 0;
   }
@@ -60,11 +95,27 @@
     }
 */
 .alertPulse {
+  -webkit-animation: alertPulse 1s ease-out;
   animation: alertPulse 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   opacity: 1;
 }
 @-webkit-keyframes alertPulse {
+  0% {
+    background-color: #9a2727;
+    opacity: 1;
+  }
+  50% {
+    opacity: red;
+    opacity: 0.75;
+  }
+  100% {
+    opacity: #9a2727;
+    opacity: 1;
+  }
+}
+@keyframes alertPulse {
   0% {
     background-color: #9a2727;
     opacity: 1;
@@ -87,21 +138,30 @@ Usage
     }
 */
 .rotating {
+  -webkit-animation: rotating 3s linear infinite;
   animation: rotating 3s linear infinite;
 }
-@keyframes rotating {
+@-webkit-keyframes rotating {
   from {
     -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
     -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
