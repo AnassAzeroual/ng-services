@@ -151,6 +151,10 @@ export class AppComponent {
     'slideOutLeft',
     'slideOutRight',
     'slideOutUp',
+    'pulsate',
+    'opacityPulse',
+    'alertPulse',
+    'rotating',
   ];
 
   onChangeAnimate(e: any) {
